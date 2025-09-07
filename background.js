@@ -3,7 +3,7 @@ chrome.runtime.onMessageExternal.addListener((message, sender, sendResponse) => 
     const cookieQueries = [
       { domain: "eventlink.wizards.com" },
       { domain: ".wizards.com" },
-      { domain: "www.wizards.com" }, // just in case
+      { domain: "www.wizards.com" }, 
       { url: "https://eventlink.wizards.com" },
       { url: "https://www.wizards.com" }
     ];
@@ -18,7 +18,6 @@ chrome.runtime.onMessageExternal.addListener((message, sender, sendResponse) => 
     Promise.all(promises).then((cookieArrays) => {
       const allCookies = cookieArrays.flat();
 
-      // De-duplicate cookies by name + domain
       const dedupedCookies = Array.from(
         new Map(allCookies.map((c) => [`${c.domain}|${c.name}`, c])).values()
       );
