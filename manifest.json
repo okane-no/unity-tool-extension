@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Eventlink Cookie Helper",
+  "version": "1.0",
+  "description": "Extract Eventlink cookies and send them to your webapp.",
+  "permissions": [
+    "cookies",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://eventlink.wizards.com/*",
+"*://*.wizards.com/"
+
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://eventlink.wizards.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*"]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  }
+}
