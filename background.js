@@ -1,6 +1,9 @@
 const ALLOWED_ORIGINS = [
   "http://localhost:5173",
-  "https://yourdomain.com",     // ← replace with prod domain
+  "https://www.eventlinktounity.com",
+  "http://www.eventlinktounity.com",
+  "https://eventlinktounity.com",
+  "http://eventlinktounity.com",
 ];
 
 chrome.runtime.onMessageExternal.addListener((message, sender, sendResponse) => {
