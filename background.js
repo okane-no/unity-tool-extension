@@ -1,5 +1,22 @@
+const ALLOWED_ORIGINS = [
+  "http://localhost:5173",
+  "https://yourdomain.com",     // ← replace with prod domain
+];
+
 chrome.runtime.onMessageExternal.addListener((message, sender, sendResponse) => {
-  if (message.type === "GET_COOKIES") {
+
+  const origin = sender.origin || sender.url || "";
+  if (!ALLOWED_ORIGINS.some((o) => origin.startsWith(o))) {
+    sendResponse({ ok: false, error: "forbidden" });
+    return; // sync response
+  }
+
+  if (message?.type === "PING") {
+    sendResponse({ ok: true });
+    return; // sync response
+  }
+
+    if (message.type === "GET_COOKIES") {
     const cookieQueries = [
       { domain: "eventlink.wizards.com" },
       { domain: ".wizards.com" },
@@ -28,4 +45,6 @@ chrome.runtime.onMessageExternal.addListener((message, sender, sendResponse) => 
 
     return true; // Required for async sendResponse
   }
+
+  sendResponse({ ok: false, error: "unsupported_message_type" });
 });
