@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Eventlink Cookie Helper",
   "version": "1.0",
-  "description": "Extract Eventlink cookies and send them to your webapp.",
+  "description": "Extract Eventlink cookies so user can push unity event automaticly in eventlinktounity.com",
   "permissions": [
     "cookies",
     "scripting",
