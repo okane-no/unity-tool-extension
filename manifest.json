@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Eventlink → Unity Sync Helper",
   "version": "1.0",
-  "description": "Detects Eventlink login and bridges it to UnityLeague.gg so you can import events and standings fast.",
+  "description": "Bridge EventLink login and sync events/standings to UnityLeague.gg via eventlinktounity.com—fast, secure, and organizer-friendly.",
   "permissions": [
     "cookies"
   ],
