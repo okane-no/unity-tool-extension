@@ -1,12 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Eventlink Cookie Helper",
+  "name": "Eventlink → Unity Sync Helper",
   "version": "1.0",
-  "description": "Extract Eventlink cookies so user can push unity event automaticly in eventlinktounity.com",
+  "description": "Detects Eventlink login and bridges it to UnityLeague.gg so you can import events and standings fast.",
   "permissions": [
-    "cookies",
-    "scripting",
-    "activeTab"
+    "cookies"
   ],
   "host_permissions": [
     "https://eventlink.wizards.com/*",
@@ -27,7 +25,6 @@
     "matches": ["http://localhost/*"]
   },
   "action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "128": "icon128.png"
     }
